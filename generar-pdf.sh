@@ -151,6 +151,18 @@ else
   printf '%s\n' '\providecommand{\displayfont}{}' >> "$TMP/header-base.tex"
 fi
 
+# Marca de agua "BORRADOR" en los builds de desarrollo (main): se aplica salvo que el HEAD
+# sea exactamente un tag (release) o que se fije WATERMARK por entorno (WATERMARK= para quitarla).
+# Así los PDF de main/CI (pre-release "preview") salen marcados; un release con tag, limpio.
+if [[ -z "${WATERMARK+x}" ]]; then
+  if git -C "$HERE" describe --exact-match --tags HEAD >/dev/null 2>&1; then WATERMARK=""; else WATERMARK="BORRADOR"; fi
+fi
+if [[ -n "${WATERMARK:-}" ]]; then
+  printf '\\usepackage{draftwatermark}\n\\SetWatermarkText{%s}\n\\SetWatermarkScale{0.9}\n\\SetWatermarkColor[gray]{0.85}\n\\SetWatermarkAngle{55}\n' \
+    "$WATERMARK" >> "$TMP/header-base.tex"
+  echo "marca de agua: $WATERMARK"
+fi
+
 # Genera un JPEG reescalado (cross-platform: ImageMagick o sips). Devuelve 1 si no hay.
 mk_jpeg () { # mk_jpeg <src> <out> <maxpx>
   if   command -v magick  >/dev/null 2>&1; then magick "$1" -resize "${3}x${3}>" -quality 85 "$2" 2>/dev/null

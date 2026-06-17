@@ -47,6 +47,12 @@ lectura = encabezado sobrio con filete; impresión = **portadilla** de sección 
 con la fuente *display* (Michroma). Para enriquecer la réplica (cubierta, fondos), se amplía
 solo el bloque del tema `impresion`.
 
+**Marca de agua «BORRADOR»** (`draftwatermark`): se aplica a los builds de **desarrollo/main**
+(incluida la CI → pre-release `preview`) y **no** a un release con tag. Lógica: marca activa
+salvo que `HEAD` sea exactamente un tag, o que se fije `WATERMARK` por entorno
+(`WATERMARK= make pdf` la quita; `WATERMARK="texto"` la cambia). El PDF original de la `v1.0`
+no se genera aquí, así que va sin marca.
+
 `generar-pdf.sh` (cadena pandoc → tectonic):
 - Ensambla `capitulos/[0-9]*.md` + `metadata.yml`.
 - Aplica el preámbulo LaTeX (portada, índice, secciones sobrias, tablas zebra vía
