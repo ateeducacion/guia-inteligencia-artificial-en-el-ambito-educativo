@@ -1,0 +1,27 @@
+# --- Artefactos generados (se construyen con: bash generar-pdf.sh) ---
+pdf/
+docx/
+
+# --- Fuentes bibliográficas con copyright: NO se redistribuyen ---
+# Solo se versiona el índice (fuentes/README.md); los PDF/originales se descargan
+# en local y quedan fuera del repo. Ver fuentes/README.md y references.bib (DOIs/URLs).
+fuentes/*
+!fuentes/README.md
+
+# --- Tipografías ---
+# Las LIBRES (Carlito, Arimo, Tinos, display futuristas: OFL/Apache) SÍ se versionan
+# en assets/tipografias/ y el build las usa. Las COMERCIALES (Astromax, Varino,
+# Staxgazer…) NO se versionan: cópialas en assets/tipografias/comercial/ (ignorada).
+assets/tipografias/comercial/
+
+# --- Material de origen para la ingesta (copias locales del original) ---
+# La maquetación original (DOCX/PDF/CorelDraw, fuentes, históricos) se mantiene en
+# local fuera del repo. Si copias algo aquí para trabajar, que caiga en _origen/.
+_origen/
+
+# --- Entorno local / secretos ---
+.env
+
+# --- Basura del SO / editor ---
+.DS_Store
+**/.DS_Store

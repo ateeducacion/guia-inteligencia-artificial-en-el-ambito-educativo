@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "Si usas este material, por favor cítalo como se indica a continuación."
+title: "La inteligencia artificial (IA) en el ámbito educativo"
+abstract: >-
+  Guía para la comunidad educativa sobre el uso seguro, ético, inclusivo y responsable
+  de la inteligencia artificial en los centros educativos: qué es la IA y sus tipos, cómo
+  puede mejorar la enseñanza y el aprendizaje, aplicaciones por niveles cognitivos, y
+  recomendaciones de implementación con una lista de cotejo para validar herramientas.
+type: dataset
+authors:
+  - name: "Área de Tecnología Educativa"
+    website: "https://www3.gobiernodecanarias.org/medusa/ecoescuela/ate/"
+    city: "Canarias"
+    country: ES
+publisher:
+  name: "Consejería de Educación, Formación Profesional, Actividad Física y Deportes — Gobierno de Canarias"
+keywords:
+  - inteligencia artificial
+  - educación
+  - competencia digital
+  - ética
+  - protección de datos
+license: CC-BY-NC-SA-4.0
+version: "1.0.0"
+date-released: "2024-02-28"

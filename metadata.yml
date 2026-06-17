@@ -1,0 +1,26 @@
+---
+# Metadatos del documento para pandoc. Editables a mano.
+# El build (generar-pdf.sh) ensambla capitulos/*.md por orden y aplica estos metadatos.
+title: "La inteligencia artificial (IA) en el ámbito educativo"
+subtitle: "Guía para la comunidad educativa"
+author:
+  - "Área de Tecnología Educativa"
+# La fecha la inyecta el build (fecha de compilación). Para fijar una fecha de
+# edición concreta, descomenta y ajusta:
+# date: "Canarias, febrero de 2024"
+lang: es
+# Pie/cabecera y créditos (colofón) — ver capitulos/00-creditos.md
+publisher: "Consejería de Educación, Formación Profesional, Actividad Física y Deportes — Gobierno de Canarias"
+rights: "CC BY-NC-SA 4.0"
+keywords:
+  - inteligencia artificial
+  - educación
+  - competencia digital
+  - ética
+  - protección de datos
+abstract: |
+  Guía para la comunidad educativa sobre el uso seguro, ético, inclusivo y responsable
+  de la inteligencia artificial en los centros: qué es la IA y sus tipos, cómo puede
+  mejorar la enseñanza y el aprendizaje, aplicaciones por niveles cognitivos, y
+  recomendaciones de implementación con una lista de cotejo para validar herramientas.
+---

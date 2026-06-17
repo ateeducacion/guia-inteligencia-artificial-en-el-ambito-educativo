@@ -1,0 +1,31 @@
+Licencia del CONTENIDO de la guía
+=================================
+
+«La inteligencia artificial (IA) en el ámbito educativo»
+© Consejería de Educación, Formación Profesional, Actividad Física y Deportes —
+Gobierno de Canarias. Autoría: Área de Tecnología Educativa.
+
+El texto, las figuras, los iconos y demás contenido de la guía (carpetas
+`capitulos/`, `assets/`, `figures/`, `fuentes/README.md`, `metadata.yml`) se publican bajo:
+
+  Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional
+  (CC BY-NC-SA 4.0)
+
+  - Resumen legible:  https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
+  - Texto legal:      https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.es
+
+En resumen, eres libre de **compartir** y **adaptar** el material siempre que:
+
+  - ATRIBUCIÓN — cites la autoría (Área de Tecnología Educativa, Gobierno de Canarias),
+    enlaces a la licencia e indiques si se hicieron cambios.
+  - NO COMERCIAL — no uses el material con fines comerciales.
+  - COMPARTIR IGUAL — si transformas o creas a partir del material, distribuyas tu
+    contribución bajo la misma licencia que el original.
+
+Excepción: las **fuentes bibliográficas de terceros** (los PDF/originales citados) son
+obra de sus editoriales y **no** se redistribuyen aquí; se enlazan por DOI/URL en
+`fuentes/README.md` y `references.bib`. Las **tipografías de marca** tienen licencia
+comercial propia y no se incluyen.
+
+El TOOLING de construcción (scripts de build) se licencia por separado bajo MIT; ver
+`LICENSE-CODE`.
