@@ -11,13 +11,13 @@
 
 **Autoría:** Área de Tecnología Educativa
 
-**Licencia de uso:** Creative Commons Atribución-CompartirIgual 4.0 Internacional
-(CC BY-SA 4.0) — <https://creativecommons.org/licenses/by-sa/4.0/>
+**Licencia de uso:** Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional
+(CC BY-NC-SA 4.0) — <https://creativecommons.org/licenses/by-nc-sa/4.0/>
 
 :::
 
 ```{=latex}
-\noindent\includegraphics[width=0.18\textwidth]{assets/logos/cc-by-sa.png}
+\noindent\includegraphics[width=0.18\textwidth]{assets/logos/cc-by-nc-sa.png}
 ```
 
 ::: {.creditos}

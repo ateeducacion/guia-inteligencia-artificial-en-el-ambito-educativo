@@ -63,10 +63,9 @@ versionados** (se reconstruyen, y en CI se publican como pre-release `preview`).
 
 ## Licencias
 
-- **Todo el repositorio** (contenido de la guía y tooling de build) → **CC BY-SA 4.0** (ver [`LICENSE`](LICENSE)).
+- **Todo el repositorio** (contenido de la guía y tooling de build) → **CC BY-NC-SA 4.0** (ver [`LICENSE`](LICENSE)).
 - **Fuentes de terceros** (PDFs citados): no se redistribuyen (enlace por DOI/URL).
 - **Tipografías** incluidas: bajo su propia licencia libre (OFL/Apache, ver [`assets/tipografias/`](assets/tipografias/)).
-- La edición original publicada (release `v1.0`) se distribuyó bajo CC BY-NC-SA 4.0.
 
 ## Cómo citar
 

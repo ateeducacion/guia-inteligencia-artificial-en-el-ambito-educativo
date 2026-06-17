@@ -8,16 +8,16 @@ Gobierno de Canarias. Autoría: Área de Tecnología Educativa.
 Todo el repositorio —tanto el **contenido de la guía** (texto, figuras, iconos) como el
 **tooling de construcción** (scripts, Makefile, filtros pandoc)— se publica bajo:
 
-  Creative Commons Atribución-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)
+  Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)
 
-  - Resumen legible:  https://creativecommons.org/licenses/by-sa/4.0/deed.es
-  - Texto legal:      https://creativecommons.org/licenses/by-sa/4.0/legalcode.es
+  - Resumen legible:  https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
+  - Texto legal:      https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.es
 
-En resumen, eres libre de **compartir** y **adaptar** el material (incluso con fines
-comerciales) siempre que:
+En resumen, eres libre de **compartir** y **adaptar** el material siempre que:
 
   - ATRIBUCIÓN — cites la autoría (Área de Tecnología Educativa, Gobierno de Canarias),
     enlaces a la licencia e indiques si se hicieron cambios.
+  - NO COMERCIAL — no uses el material con fines comerciales.
   - COMPARTIR IGUAL — si transformas o creas a partir del material, distribuyas tu
     contribución bajo la misma licencia que el original.
 
@@ -28,7 +28,4 @@ Obra de terceros (conserva su propia licencia, no cubierta por la de arriba):
   - Las **tipografías** incluidas en `assets/tipografias/` están bajo sus licencias
     (OFL 1.1 / Apache 2.0; ver `assets/tipografias/README.md` y `OFL.txt`).
   - Algunas **figuras de terceros** conservan su licencia propia, indicada en su pie/crédito
-    (p. ej. el póster de AI4K12 es CC BY-NC-SA 4.0).
-
-Nota: la edición original publicada de la guía (adjunta a la release `v1.0`) se distribuyó
-bajo CC BY-NC-SA 4.0; esta edición mantenida en el repositorio se publica bajo CC BY-SA 4.0.
+    (p. ej. el póster de AI4K12, CC BY-NC-SA 4.0).
