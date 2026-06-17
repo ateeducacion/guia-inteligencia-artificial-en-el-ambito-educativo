@@ -22,7 +22,9 @@
 
 ::: {.creditos}
 
-**Fecha de producción:** Canarias, @FECHA@
+**Publicación original:** febrero de 2024 (v1.0)
+
+**Edición revisada:** @FECHA@
 
 :::
 
