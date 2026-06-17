@@ -22,7 +22,7 @@
 
 ::: {.creditos}
 
-**Fecha de producción:** Canarias, febrero de 2024
+**Fecha de producción:** Canarias, @FECHA@
 
 :::
 

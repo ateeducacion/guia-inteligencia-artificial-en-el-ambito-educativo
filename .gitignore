@@ -9,10 +9,7 @@ fuentes/*
 !fuentes/README.md
 
 # --- Tipografías ---
-# Las LIBRES (Carlito, Arimo, Tinos, display futuristas: OFL/Apache) SÍ se versionan
-# en assets/tipografias/ y el build las usa. Las COMERCIALES (Astromax, Varino,
-# Staxgazer…) NO se versionan: cópialas en assets/tipografias/comercial/ (ignorada).
-assets/tipografias/comercial/
+# Las tipografías libres (OFL/Apache) se versionan en assets/tipografias/ y el build las usa.
 
 # --- Material de origen para la ingesta (copias locales del original) ---
 # La maquetación original (DOCX/PDF/CorelDraw, fuentes, históricos) se mantiene en

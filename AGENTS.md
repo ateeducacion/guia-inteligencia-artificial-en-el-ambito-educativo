@@ -136,8 +136,7 @@ Proceso recomendado, **sección a sección**:
 |---|---|
 | `pdf/`, `docx/` | Artefactos reconstruibles (`make pdf`); se publican como release |
 | `fuentes/*` (salvo `README.md`) | PDFs de terceros con copyright; se enlazan por DOI/URL |
-| `assets/tipografias/comercial/` | Tipografías de marca con licencia comercial (las libres SÍ se versionan) |
-| `_origen/` | Copias locales del material original para trabajar |
+| `_origen/` | Carpeta de trabajo de la ingesta (regenerable con `scripts/ingerir.sh`) |
 | `.env`, `.claude/settings.local.json`, `.DS_Store` | Secretos/ajustes locales / basura del SO |
 
 ## Estado y hoja de ruta
@@ -146,15 +145,13 @@ Proceso recomendado, **sección a sección**:
 `impresion` réplica); ingesta de las 8 secciones; tablas; citas APA + bibliografía; figuras
 (3 fotos en `assets/` + 4 diagramas TikZ); logos (Gobierno, CC); recuadros `.nota`/`.definicion`;
 tipografías libres versionadas; optimización (oxipng + imágenes a 300 dpi/JPEG en el PDF);
-tema `impresion` con **cubierta réplica** (FONDO_2 + «IA» + título display + logo) y **portadillas**
-de sección.
+tema `impresion` con **cubierta réplica** (FONDO_2 + «IA» + título display + logo), **portadillas
+de sección a página completa con fondo full-bleed** (`titleclass page` + `eso-pic`, FONDO_1 con
+velo oscuro y título en blanco; el contenido va en página blanca legible) y recuadros del original.
 
-**Pendiente — fondos a página completa (full-bleed) en el tema `impresion`:**
-- Objetivo: reproducir los *spreads* de fondo (las imágenes de `assets/fondos/`) detrás del
-  contenido de cada sección, como en el original.
-- Enfoque: `eso-pic` (`\AddToShipoutPictureBG`) o un fondo tikz/tcolorbox de página, aplicado
-  **solo** en `gen_header` del tema `impresion`. Reescalar cada fondo a ~150–200 dpi y JPEG
-  (con `mk_jpeg`, como la cubierta) para no inflar el PDF.
-- Reto a resolver: **legibilidad** del texto sobre fondo oscuro → o texto claro en esas páginas,
-  o una capa semitransparente clara (scrim) bajo el texto, o limitar el fondo a bandas/márgenes.
-  Decidir según el caso. El tema `lectura` se mantiene con fondo blanco.
+**Posibles mejoras futuras del tema `impresion` (opcionales):**
+- **Fondos por sección variados**: cycle de `FONDO_1..5` por portadilla (hoy todas usan FONDO_1).
+  Requiere seleccionar la imagen según un contador en el `\titleformat` (algo más enrevesado).
+- **Fondo también en páginas de contenido**: solo viable con una capa clara semitransparente
+  (scrim) bajo el texto, o texto claro; si no, se pierde legibilidad. Decidir caso por caso.
+- El tema `lectura` se mantiene siempre con fondo blanco.

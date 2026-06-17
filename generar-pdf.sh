@@ -23,6 +23,9 @@ cd "$HERE"
 OUTPDF="$HERE/pdf"; OUTDOCX="$HERE/docx"; mkdir -p "$OUTPDF" "$OUTDOCX"
 TMP="$(mktemp -d)"; trap 'rm -rf "$TMP"' EXIT
 TODAY="$(date +%Y-%m-%d)"
+# Fecha del documento en formato "mes de año" (español), p. ej. "junio de 2026".
+MESES_ES=(enero febrero marzo abril mayo junio julio agosto septiembre octubre noviembre diciembre)
+FECHA_DOC="${MESES_ES[$((10#$(date +%m)-1))]} de $(date +%Y)"
 SLUG="guia-ia-educacion"
 BIB="$HERE/references.bib"
 CSL="$HERE/apa.csl"
@@ -161,14 +164,31 @@ gen_header () { # gen_header <tema> -> $TMP/header-<tema>.tex
   local tema="$1"; local h="$TMP/header-$tema.tex"
   cp "$TMP/header-base.tex" "$h"
   if [[ "$tema" == impresion ]]; then
-    # Portadillas de sección: página completa, título grande en display + filete de color.
+    # Fondos full-bleed (FONDO_1..5) reescalados a JPEG; se ALTERNAN por sección.
+    local fondodir="$TMP"
+    for n in 1 2 3 4 5; do
+      mk_jpeg "$HERE/assets/fondos/FONDO_$n.png" "$TMP/fondo-$n.jpg" 1200 \
+        || cp "$HERE/assets/fondos/FONDO_$n.png" "$TMP/fondo-$n.jpg" 2>/dev/null || true
+    done
     cat >> "$h" <<'TEX'
-\newcommand{\sectionbreak}{\clearpage}
+% Contador que cicla FONDO_1..5 por portadilla.
+\newcounter{fondoidx}\setcounter{fondoidx}{0}
+\newcommand{\nextfondo}{\stepcounter{fondoidx}\ifnum\value{fondoidx}>5\setcounter{fondoidx}{1}\fi}
+% Portadilla de sección: PÁGINA COMPLETA propia (titleclass page) con fondo full-bleed
+% (alternando FONDO_1..5 + velo oscuro) y título en blanco. El contenido va en la página
+% siguiente (fondo blanco, legible). El fondo se dibuja con tikz overlay anclado a la página
+% (sin diferir a shipout, para que cada portadilla coja su FONDO correcto).
+\titleclass{\section}{page}
 \titleformat{\section}[display]
-  {\centering\displayfont\color{guialink}}
-  {\fontsize{40}{44}\selectfont\thesection}{0.45em}{\fontsize{19}{24}\selectfont\MakeUppercase}
-  [{\vspace{0.5em}\color{guialink}\titlerule[1.2pt]}]
-\titlespacing*{\section}{0pt}{5\baselineskip}{2.4\baselineskip}
+  {\centering\displayfont\color{white}}
+  {\fontsize{44}{48}\selectfont\thesection}{0.5em}
+  {\nextfondo\thispagestyle{empty}%
+   \begin{tikzpicture}[remember picture,overlay]%
+     \node[inner sep=0] at (current page.center) {\includegraphics[width=\paperwidth,height=\paperheight]{@FONDODIR@/fondo-\thefondoidx.jpg}};%
+     \fill[black,opacity=0.34] (current page.south west) rectangle (current page.north east);%
+   \end{tikzpicture}%
+   \fontsize{20}{25}\selectfont\MakeUppercase}
+\titlespacing*{\section}{0pt}{0.30\textheight}{1em}
 % El original no lleva "Resumen" en cubierta: lo ocultamos en impresión.
 \usepackage{environ}
 \AtBeginDocument{\RenewEnviron{abstract}{}}
@@ -199,7 +219,7 @@ TEX
   \end{titlepage}%
 }
 TEX
-    sed -i.bak "s#@COVER@#$coverjpg#g; s#@GOV@#$gov#g" "$h" && rm -f "$h.bak"
+    sed -i.bak "s#@COVER@#$coverjpg#g; s#@GOV@#$gov#g; s#@FONDODIR@#$fondodir#g" "$h" && rm -f "$h.bak"
   else
     # Lectura: encabezado sobrio con filete fino (estilo actual).
     cat >> "$h" <<'TEX'
@@ -214,6 +234,8 @@ TEX
 for f in "$HERE"/capitulos/[0-9]*.md; do
   cat "$f" >> "$TMP/cuerpo.md"; printf '\n\n' >> "$TMP/cuerpo.md"
 done
+# Fecha del documento (colofón): @FECHA@ -> "mes de año" de la compilación.
+sed -i.bak "s/@FECHA@/$FECHA_DOC/g" "$TMP/cuerpo.md" && rm -f "$TMP/cuerpo.md.bak"
 
 cite=(--citeproc --bibliography="$BIB")
 [[ -f "$CSL" ]] && cite+=(--csl="$CSL")
@@ -231,13 +253,13 @@ pdf_common=(
   --lua-filter="$HERE/pandoc/callouts.lua"
   -V lang=es -V geometry:margin=2.2cm -V fontsize=11pt -V linestretch=1.08
   -V colorlinks=true -V linkcolor=guialink -V citecolor=guialink -V urlcolor=guialink
-  -V date="$TODAY"
+  -V date="$FECHA_DOC"
   "${cite[@]}"
 )
 docx_common=(
   "$META" "$TMP/cuerpo.md"
   --from "$READER" --to docx --standalone --toc --toc-depth=3
-  --metadata date="$TODAY" --metadata lang=es
+  --metadata date="$FECHA_DOC" --metadata lang=es
   "${cite[@]}"
 )
 

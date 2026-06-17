@@ -15,8 +15,8 @@ el PDF se reproduce **sin instalar nada en el sistema**.
 
 - **Carlito** es el clon libre de Calibri de métricas idénticas (mismos anchos); de hecho
   LibreOffice lo usa como sustituto automático de Calibri. Es lo más cercano posible a «idéntico».
-- Las **comerciales** (Astromax/Varino/Staxgazer) tienen licencia de pago y **no** se incluyen.
-  Si quieres usarlas en local, cópialas en `assets/tipografias/comercial/` (carpeta `gitignored`).
+- Las tipografías comerciales del original (de pago) **no se incluyen ni se usan**: las libres
+  de la tabla las reemplazan por completo.
 
 ## Uso en el build
 
