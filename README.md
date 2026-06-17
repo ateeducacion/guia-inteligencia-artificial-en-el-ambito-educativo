@@ -63,9 +63,19 @@ versionados** (se reconstruyen, y en CI se publican como pre-release `preview`).
 
 ## Licencias
 
-- **Todo el repositorio** (contenido de la guía y tooling de build) → **CC BY-NC-SA 4.0** (ver [`LICENSE`](LICENSE)).
-- **Fuentes de terceros** (PDFs citados): no se redistribuyen (enlace por DOI/URL).
-- **Tipografías** incluidas: bajo su propia licencia libre (OFL/Apache, ver [`assets/tipografias/`](assets/tipografias/)).
+Todo el repositorio —contenido de la guía (texto, figuras, iconos) y tooling de construcción
+(scripts, `Makefile`, filtros pandoc)— se publica bajo **Creative Commons
+Atribución-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)**. El texto legal
+íntegro y sin modificar está en [`LICENSE`](LICENSE).
+
+**Obra de terceros** (conserva su propia licencia, no cubierta por la anterior):
+
+- **Fuentes bibliográficas** citadas (PDFs): no se redistribuyen; se enlazan por DOI/URL en
+  [`fuentes/README.md`](fuentes/) y `references.bib`.
+- **Tipografías** incluidas en [`assets/tipografias/`](assets/tipografias/): bajo sus propias
+  licencias libres (OFL 1.1 / Apache 2.0).
+- Algunas **figuras de terceros** conservan su licencia propia, indicada en su pie/crédito
+  (p. ej. el póster de AI4K12 «Cinco grandes ideas en IA», CC BY-NC-SA 4.0).
 
 ## Cómo citar
 
