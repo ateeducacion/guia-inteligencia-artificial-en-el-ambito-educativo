@@ -20,7 +20,7 @@ set -euo pipefail
 
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$HERE"
-OUTPDF="$HERE/pdf"; OUTDOCX="$HERE/docx"; mkdir -p "$OUTPDF" "$OUTDOCX"
+OUTPDF="$HERE/pdf"; OUTDOCX="$HERE/docx"; OUTMD="$HERE/md"; mkdir -p "$OUTPDF" "$OUTDOCX" "$OUTMD"
 TMP="$(mktemp -d)"; trap 'rm -rf "$TMP"' EXIT
 TODAY="$(date +%Y-%m-%d)"
 # Fecha del documento en formato "mes de año" (español), p. ej. "junio de 2026".
@@ -266,6 +266,10 @@ docx_common=(
 echo "== Guía =="
 pandoc "${docx_common[@]}" -o "$OUTDOCX/$SLUG.docx"
 echo "  docx -> $SLUG.docx ($(du -h "$OUTDOCX/$SLUG.docx" | cut -f1))"
+# Guía en Markdown único (GFM, citas APA resueltas) para acompañar a los PDF en la release.
+# El LaTeX crudo (diagramas TikZ) no se representa en GFM; sí el resto del texto, tablas y bibliografía.
+pandoc "$META" "$TMP/cuerpo.md" --from "$READER" --to gfm "${cite[@]}" -o "$OUTMD/$SLUG.md"
+echo "  md   -> $SLUG.md ($(du -h "$OUTMD/$SLUG.md" | cut -f1))"
 
 for tema in ${TEMAS[@]+"${TEMAS[@]}"}; do
   out="$OUTPDF/$SLUG-$tema.pdf"

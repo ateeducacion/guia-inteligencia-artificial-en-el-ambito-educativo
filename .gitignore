@@ -1,6 +1,7 @@
 # --- Artefactos generados (se construyen con: bash generar-pdf.sh) ---
 pdf/
 docx/
+md/
 
 # --- Fuentes bibliográficas con copyright: NO se redistribuyen ---
 # Solo se versiona el índice (fuentes/README.md); los PDF/originales se descargan

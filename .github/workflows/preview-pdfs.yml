@@ -77,4 +77,4 @@ jobs:
             --target "$GITHUB_SHA" \
             --title "Preview — última build de main" \
             --notes-file "$NOTES" \
-            pdf/*.pdf pdf/SHA256SUMS
+            pdf/*.pdf pdf/SHA256SUMS md/guia-ia-educacion.md

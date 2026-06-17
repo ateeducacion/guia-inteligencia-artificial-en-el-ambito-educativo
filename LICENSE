@@ -1,31 +1,34 @@
-Licencia del CONTENIDO de la guía
-=================================
+Licencia del repositorio
+========================
 
 «La inteligencia artificial (IA) en el ámbito educativo»
 © Consejería de Educación, Formación Profesional, Actividad Física y Deportes —
 Gobierno de Canarias. Autoría: Área de Tecnología Educativa.
 
-El texto, las figuras, los iconos y demás contenido de la guía (carpetas
-`capitulos/`, `assets/`, `figures/`, `fuentes/README.md`, `metadata.yml`) se publican bajo:
+Todo el repositorio —tanto el **contenido de la guía** (texto, figuras, iconos) como el
+**tooling de construcción** (scripts, Makefile, filtros pandoc)— se publica bajo:
 
-  Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional
-  (CC BY-NC-SA 4.0)
+  Creative Commons Atribución-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)
 
-  - Resumen legible:  https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
-  - Texto legal:      https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.es
+  - Resumen legible:  https://creativecommons.org/licenses/by-sa/4.0/deed.es
+  - Texto legal:      https://creativecommons.org/licenses/by-sa/4.0/legalcode.es
 
-En resumen, eres libre de **compartir** y **adaptar** el material siempre que:
+En resumen, eres libre de **compartir** y **adaptar** el material (incluso con fines
+comerciales) siempre que:
 
   - ATRIBUCIÓN — cites la autoría (Área de Tecnología Educativa, Gobierno de Canarias),
     enlaces a la licencia e indiques si se hicieron cambios.
-  - NO COMERCIAL — no uses el material con fines comerciales.
   - COMPARTIR IGUAL — si transformas o creas a partir del material, distribuyas tu
     contribución bajo la misma licencia que el original.
 
-Excepción: las **fuentes bibliográficas de terceros** (los PDF/originales citados) son
-obra de sus editoriales y **no** se redistribuyen aquí; se enlazan por DOI/URL en
-`fuentes/README.md` y `references.bib`. Las **tipografías de marca** tienen licencia
-comercial propia y no se incluyen.
+Obra de terceros (conserva su propia licencia, no cubierta por la de arriba):
 
-El TOOLING de construcción (scripts de build) se licencia por separado bajo MIT; ver
-`LICENSE-CODE`.
+  - Las **fuentes bibliográficas** citadas (PDFs) no se redistribuyen; se enlazan por
+    DOI/URL en `fuentes/README.md` y `references.bib`.
+  - Las **tipografías** incluidas en `assets/tipografias/` están bajo sus licencias
+    (OFL 1.1 / Apache 2.0; ver `assets/tipografias/README.md` y `OFL.txt`).
+  - Algunas **figuras de terceros** conservan su licencia propia, indicada en su pie/crédito
+    (p. ej. el póster de AI4K12 es CC BY-NC-SA 4.0).
+
+Nota: la edición original publicada de la guía (adjunta a la release `v1.0`) se distribuyó
+bajo CC BY-NC-SA 4.0; esta edición mantenida en el repositorio se publica bajo CC BY-SA 4.0.
