@@ -25,7 +25,7 @@ jobs:
       TECTONIC_VERSION: "0.16.9"
       PREVIEW_TAG: preview
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Cache de paquetes de tectonic
         uses: actions/cache@v5
