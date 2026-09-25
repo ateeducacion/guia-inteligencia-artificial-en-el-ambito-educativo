@@ -13,7 +13,7 @@ los metadatos de `../metadata.yml` y genera el PDF/DOCX con bibliografía APA.
   (no se usa `--number-sections`) para reproducir la numeración del original.
 - **Citas**: `[@clave]` usando las claves de `../references.bib` (p. ej. `[@aepd2022]`).
   La sección «Bibliografía» se genera automáticamente con citeproc en
-  `06-bibliografia.md` (no se escribe a mano).
+  `07-bibliografia.md` (no se escribe a mano).
 - **Figuras/iconos**: rutas relativas a la raíz del repo, p. ej.
   `![Pie de figura](assets/imagenes/IMAG_1.png)`. Los assets están versionados en `assets/`.
 - **Recuadros** (reproducen los del original): `::: {.nota}` … `:::` para cajas destacadas

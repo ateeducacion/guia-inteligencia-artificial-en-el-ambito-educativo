@@ -27,7 +27,8 @@ actualizando la guía en futuras versiones con todo indexado.
 | `generar-pdf.sh` · `Makefile` | **Pipeline de build**: ensambla `capitulos/` → PDF + DOCX con bibliografía APA |
 | `pandoc/zebra-tables.lua` | Filtro Lua para tablas con filas alternas (zebra) |
 | `scripts/` | Utilidades (regenerar el índice de fuentes desde el `.bib`) |
-| [`AGENTS.md`](AGENTS.md) | **Runbook de gestión documental**: convenciones, ingesta, bibliografía, releases |
+| [`AGENTS.md`](AGENTS.md) | **Runbook**: reglas y dónde está cada procedimiento |
+| [`.agents/skills/`](.agents/skills/) | Skills del repositorio. `.claude/skills/` es una copia completa |
 | `.github/workflows/` | CI: construye el PDF en cada push y refresca una pre-release `preview` |
 
 ## Generar el PDF / DOCX
