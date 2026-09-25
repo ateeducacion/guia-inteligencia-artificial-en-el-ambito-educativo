@@ -20,6 +20,13 @@ _origen/
 # --- Entorno local / secretos ---
 .env
 
+# Ajustes locales de Claude. Las skills sí se versionan: son copia de .agents/skills/.
+.claude/*
+!.claude/skills/
+
+# Corpus local de legalize-es. Consulta, no se versiona.
+.legalize-es/
+
 # --- Basura del SO / editor ---
 .DS_Store
 **/.DS_Store
