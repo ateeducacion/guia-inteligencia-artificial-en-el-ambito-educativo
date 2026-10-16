@@ -39,6 +39,11 @@ El mismo contenido (`capitulos/`) produce **dos PDF** con distinto *tema* visual
 - **`pdf/guia-ia-educacion-impresion.pdf`** — réplica del estilo visual del original
   (portadillas de sección con la fuente *display*, etc.).
 
+Ambos PDF utilizan **separación silábica automática en español** mediante la configuración
+`lang: es` de Pandoc y las reglas tipográficas del preámbulo LaTeX compartido en
+`generar-pdf.sh`, para evitar espacios excesivos en los párrafos justificados. Este ajuste
+no modifica el DOCX ni los PDF generados con el motor alternativo LibreOffice.
+
 ```bash
 make pdf            # DOCX + ambos PDF (lectura e impresión) en pdf/ y docx/
 make docx           # solo DOCX (rápido, solo pandoc)

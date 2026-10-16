@@ -74,6 +74,10 @@ cat > "$TMP/header-base.tex" <<'TEX'
 \definecolor{shadecolor}{HTML}{F4F6F8}
 \usepackage{microtype}
 \frenchspacing
+% Pandoc's lang=es enables Spanish hyphenation through Babel.
+% Favor natural word breaks over wide gaps in justified text.
+\hyphenpenalty=25
+\setlength{\emergencystretch}{2em}
 % Diagramas vectoriales (TikZ) de la guía — ver capitulos/03-tipos-de-ia.md.
 \usepackage{tikz}
 \usetikzlibrary{positioning,arrows.meta,shadows}
